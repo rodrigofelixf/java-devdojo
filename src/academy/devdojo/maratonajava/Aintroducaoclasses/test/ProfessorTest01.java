@@ -4,12 +4,18 @@ import academy.devdojo.maratonajava.Aintroducaoclasses.dominio.Professor;
 
 public class ProfessorTest01 {
     public static void main(String[] args) {
-        Professor professor = new Professor();
+        int[][] numeros = new int[3][3];
 
-        professor.name = "Mestre Kami";
-        professor.age = 140;
-        professor.gender = 'M';
+        printNomes("ROdrigo", "Jessica");
 
-        System.out.println(professor.name + " " + professor.age + " " + professor.gender);
+
     }
+
+    static void printNomes(String... nomes) {
+        for (String nome : nomes) {
+            System.out.println(nome);
+        }
+    }
+
+
 }
