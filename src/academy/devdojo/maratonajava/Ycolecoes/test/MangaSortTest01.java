@@ -1,13 +1,16 @@
 package academy.devdojo.maratonajava.Ycolecoes.test;
 
-import academy.devdojo.maratonajava.Dconstrutores.domonio.Anime;
 import academy.devdojo.maratonajava.Ycolecoes.dominio.Manga;
 
-import java.util.ArrayList;
+import java.util.*;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+class MangaByIdComparator implements Comparator<Manga> {
+
+    @Override
+    public int compare(Manga manga1, Manga manga2) {
+        return manga1.getId().compareTo(manga2.getId());
+    }
+}
 
 public class MangaSortTest01 {
     public static void main(String[] args) {
@@ -20,8 +23,10 @@ public class MangaSortTest01 {
         manga.add(new Manga(1, "Digimon", 1.0));
 
         Collections.sort(manga);
+        manga.forEach(System.out::println);
 
-
+        System.out.println("----------------------");
+        Collections.sort(manga, new MangaByIdComparator());
         manga.forEach(System.out::println);
 
     }

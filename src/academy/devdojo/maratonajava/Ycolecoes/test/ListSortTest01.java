@@ -1,9 +1,9 @@
 package academy.devdojo.maratonajava.Ycolecoes.test;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import academy.devdojo.maratonajava.Ycolecoes.dominio.Manga;
+
+import java.util.*;
+
 
 public class ListSortTest01 {
     public static void main(String[] args) {
