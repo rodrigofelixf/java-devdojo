@@ -7,11 +7,21 @@ public class Manga implements Comparable<Manga> {
     private String name;
     private double price;
 
+    private int quant;
+
+
+
 
     public Manga(long id, String name, double price) {
         this.id = id;
         this.name = name;
         this.price = price;
+    }
+
+    public Manga(Long  id, String name, double price, int quant) {
+        this(id, name, price);
+        this.quant = quant;
+
     }
 
     @Override
@@ -20,6 +30,7 @@ public class Manga implements Comparable<Manga> {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
+                ", amout=" + quant +
                 '}';
     }
 
@@ -47,20 +58,27 @@ public class Manga implements Comparable<Manga> {
         this.price = price;
     }
 
+    public int getQuant() {
+        return quant;
+    }
+
+    public void setQuant(int quant) {
+        this.quant = quant;
+    }
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Manga manga = (Manga) o;
-        return id == manga.id && Double.compare(price, manga.price) == 0 && Objects.equals(name, manga.name);
+        return Objects.equals(id, manga.id) && Objects.equals(name, manga.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, price);
+        return Objects.hash(id, name);
     }
-
 
     @Override
     public int compareTo(Manga outroManga) {

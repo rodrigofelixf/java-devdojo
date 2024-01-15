@@ -2,7 +2,7 @@ package academy.devdojo.maratonajava.Ycolecoes.dominio;
 
 import java.util.Objects;
 
-public class Smartphone {
+public class Smartphone implements Comparable<Smartphone> {
     private String serialNumber;
     private String marca;
 
@@ -64,5 +64,11 @@ public class Smartphone {
     @Override
     public int hashCode() {
         return serialNumber == null ? 0 : this.serialNumber.hashCode();
+    }
+
+
+    @Override
+    public int compareTo(Smartphone obj) {
+        return this.serialNumber.compareTo(obj.getSerialNumber());
     }
 }
