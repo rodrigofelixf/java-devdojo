@@ -3,6 +3,7 @@ package academy.devdojo.maratonajava.Ycolecoes.test;
 import academy.devdojo.maratonajava.Ycolecoes.dominio.Consumidor;
 import academy.devdojo.maratonajava.Ycolecoes.dominio.Manga;
 
+import java.security.KeyStore;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,6 +34,13 @@ public class MapTest03 {
         });
 
         System.out.println("-------------------");
+
+        for (Map.Entry<Consumidor, List<Manga>> entry : consumidorManga.entrySet()) {
+            System.out.println(entry.getKey().getName());
+            for (Manga manga : entry.getValue()) {
+                System.out.println(manga.getName());
+            }
+        }
 
 
 
