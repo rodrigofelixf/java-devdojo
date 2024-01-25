@@ -12,7 +12,7 @@ public class OptionalTest01 {
         System.out.println(o2);
         System.out.println(o3);
         System.out.println("-------------");
-        Optional<String> nameOptional = findName("fodrigo");
+        Optional<String> nameOptional = findName("Rodrigo");
         String empty = nameOptional.orElse("EMPTY");
         System.out.println(empty);
         nameOptional.ifPresent(s -> System.out.println(s.toUpperCase()));
