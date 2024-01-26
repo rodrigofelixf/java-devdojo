@@ -1,5 +1,7 @@
 package academy.devdojo.maratonajava.ZZEstreams.domain;
 
+import java.util.Objects;
+
 public class LightNovel {
     private String title;
     private double price;
@@ -31,5 +33,18 @@ public class LightNovel {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        LightNovel that = (LightNovel) object;
+        return Objects.equals(title, that.title);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title);
     }
 }
