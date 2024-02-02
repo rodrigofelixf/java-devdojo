@@ -7,7 +7,7 @@ public class Person {
     private String email;
 
 
-    public Person(String firstName, String lastName, String userName, String email) {
+    private Person(String firstName, String lastName, String userName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
@@ -31,7 +31,11 @@ public class Person {
         private String userName;
         private String email;
 
-        public PersonBuilder() {
+        private PersonBuilder() {
+        }
+
+        public static PersonBuilder builder() {
+            return new PersonBuilder();
         }
 
 
@@ -59,5 +63,9 @@ public class Person {
         public Person build() {
             return new Person(firstName, lastName, userName, email);
         }
+    }
+
+    public String getFirstName() {
+        return firstName;
     }
 }
