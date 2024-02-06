@@ -1,18 +1,24 @@
 package academy.devdojo.maratonajava.ZZIjdbc.test;
 
-import academy.devdojo.maratonajava.ZZIjdbc.conn.ConnectionFactory;
-import academy.devdojo.maratonajava.ZZIjdbc.controller.ProducerController;
+import academy.devdojo.maratonajava.ZZIjdbc.controller.ProducerService;
 import academy.devdojo.maratonajava.ZZIjdbc.domain.Producer;
 import academy.devdojo.maratonajava.ZZIjdbc.repository.ProducerRepository;
 import lombok.extern.log4j.Log4j2;
 
+import java.util.List;
+
 @Log4j2
 public class ConnectionFactoryTest01 {
     public static void main(String[] args) {
-//        Producer producer = Producer.builder().name("Editora Abril").build();
-//        ProducerController.save(producer);
+        Producer producer = Producer.builder().name("Studio Deen").build();
+        Producer producerToUpdate = Producer.builder().id(1).name("MADHOUSE").build();
+//        ProducerService.save(producer);
+//        ProducerService.delete(5);
+//        ProducerService.update(producerToUpdate);
+//        List<Producer> producers = ProducerService.findAll();
+//        List<Producer> producers = ProducerService.findByName("Mad");
+//        log.info("Producers found '{}'", producers);
+        ProducerService.showProducerMetadata();
 
-        Producer producer = Producer.builder().id(1).name("SBT").build();
-        ProducerController.update(producer);
     }
 }

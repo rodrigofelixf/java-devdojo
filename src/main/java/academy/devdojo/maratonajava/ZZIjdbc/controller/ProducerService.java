@@ -3,7 +3,9 @@ package academy.devdojo.maratonajava.ZZIjdbc.controller;
 import academy.devdojo.maratonajava.ZZIjdbc.domain.Producer;
 import academy.devdojo.maratonajava.ZZIjdbc.repository.ProducerRepository;
 
-public class ProducerController {
+import java.util.List;
+
+public class ProducerService {
 
     public static void save(Producer producer) {
         ProducerRepository.save(producer);
@@ -17,6 +19,18 @@ public class ProducerController {
     public static void update(Producer producer) {
         requireValidId(producer.getId());
         ProducerRepository.update(producer);
+    }
+
+    public static List<Producer> findAll() {
+        return ProducerRepository.findAll();
+    }
+
+    public static List<Producer> findByName(String name) {
+        return ProducerRepository.findByName(name);
+    }
+
+    public static void showProducerMetadata() {
+        ProducerRepository.showProducerMetadata();
     }
 
 
