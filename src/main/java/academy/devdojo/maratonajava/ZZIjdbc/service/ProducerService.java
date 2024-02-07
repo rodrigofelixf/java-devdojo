@@ -1,4 +1,4 @@
-package academy.devdojo.maratonajava.ZZIjdbc.controller;
+package academy.devdojo.maratonajava.ZZIjdbc.service;
 
 import academy.devdojo.maratonajava.ZZIjdbc.domain.Producer;
 import academy.devdojo.maratonajava.ZZIjdbc.repository.ProducerRepository;
@@ -29,9 +29,35 @@ public class ProducerService {
         return ProducerRepository.findByName(name);
     }
 
+    public static List<Producer> findByNamePreparedStatement(String name) {
+        return ProducerRepository.findByNamePreparedStatement(name);
+    }
+
     public static void showProducerMetadata() {
         ProducerRepository.showProducerMetadata();
     }
+
+    public static void showDriverMetaData() {
+        ProducerRepository.showDriverMetaData();
+    }
+
+    public static void showTypeScrollWorking() {
+        ProducerRepository.showTypeScrollWorking();
+    }
+
+    public static List<Producer> findByNameAndUpdateToUpperCase(String name) {
+        return ProducerRepository.findByNameAndUpdateToUpperCase(name);
+    }
+
+    public static List<Producer> findByNameAndInsertWhenNotFound(String name) {
+        return ProducerRepository.findByNameAndInsertWhenNotFound(name);
+    }
+
+    public static void findByNameAndDelete(String name) {
+        ProducerRepository.findByNameAndDelete(name);
+    }
+
+
 
 
     private static void requireValidId(Integer id) {
